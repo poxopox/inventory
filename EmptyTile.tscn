@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg1ou5fr35yic"]
+
+[ext_resource type="Texture2D" uid="uid://c25hv7innjuh" path="res://EmptyTile.jpg" id="1_swu6y"]
+[ext_resource type="Script" path="res://empty_tile.gd" id="1_vieq2"]
+
+[node name="EmptyTile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vieq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_swu6y")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

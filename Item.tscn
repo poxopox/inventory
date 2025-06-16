@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://illrduqu38ed"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_l35gk"]
+
+[node name="Item" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l35gk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
