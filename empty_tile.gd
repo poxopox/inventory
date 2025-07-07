@@ -1,7 +1,8 @@
 extends Control
 class_name EmptyTile
 
-var _tile_size: int
+@export var on_drop: Callable
+
 @export var tile_size: int:
 	get:
 		return tile_size;
@@ -40,12 +41,10 @@ func _process(delta: float) -> void:
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	print("Dropping item on empty tile at col:", col, "row:", row)
 	# Check if the dropped data is an Item
-	if data is Item:
-		var item: Item = data as Item
-		# Move the item to this empty tile's position
-		item.col = col
-		item.row = row
-		print("Item moved to position:", col, ":", row)
+	if data is Item and on_drop != null:
+		on_drop.call(Vector2(col * tile_size, row * tile_size), data)
+
+
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	# Only accept Item objects

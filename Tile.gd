@@ -24,7 +24,3 @@ func _ready () -> void:
 
 func _process(delta: float) -> void:
 	pass
-
-#func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	#print("Tile Variant" + str(at_position) + " " + str(data))
-	#return true
